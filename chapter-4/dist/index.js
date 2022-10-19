@@ -138,4 +138,98 @@ const reverse = (from, toOrDestination, destination) => {
         // 왕복 여행 예약
     }
 };
+const warnUser = (warning) => {
+    if (warnUser.wasCalled) {
+        return;
+    }
+    warnUser.wasCalled = true;
+    alert(warning);
+};
+warnUser.wasCalled = false;
+const filter = (array, f) => {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        const item = array[i];
+        if (f(item)) {
+            result.push(item);
+        }
+    }
+    return result;
+};
+// T는 number로 한정한다.
+// f: (item: T) => boolean은 f: (item: number) => boolean이 된다.
+filter([1, 2, 3, 4], _ => _ < 3);
+// T는 string으로 한정한다.
+filter(["a", "b"], _ => _ !== "b");
+// T는 { firstname: string }으로 한정한다.
+const names = [
+    { firstName: "beth" },
+    { firstName: "caitlyn" },
+    { firstName: "xin" },
+];
+filter(names, _ => _.firstName.startsWith("b"));
+const filter2 = (array, f) => {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        const item = array[i];
+        if (f(item)) {
+            result.push(item);
+        }
+    }
+    return result;
+};
+filter2([1, 2, 3, 4], _ => _ > 2);
+const filter3 = (array, f) => {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        const item = array[i];
+        if (f(item)) {
+            result.push(item);
+        }
+    }
+    return result;
+};
+filter3([1, 2, 3, 4], _ => _ > 2);
+const filter4 = (array, f) => {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        const item = array[i];
+        if (f(item)) {
+            result.push(item);
+        }
+    }
+    return result;
+};
+filter4(["a", "b", "c", "d"], _ => _ !== "b");
+function filter5(array, f) {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        const item = array[i];
+        if (f(item)) {
+            result.push(item);
+        }
+    }
+    return result;
+}
+filter5([1, 2, 3, 4], _ => _ > 2);
+// map 함수 구현
+// filter와 비슷하지만 배열에서 항목을 제거하는 대신 매핑 함수를 이용하여 각 항목을 변환한다.
+function map(array, f) {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        result[i] = f(array[i]);
+    }
+    return result;
+}
+// 범용적인 map 함수 만들기
+// 인수 배열 멤버의 타입을 대변하는 T, 반환 배열 멤버 타입을 대변하는 U <- 두 가지 제네릭 타입
+// T 타입의 요소를 포함하는 배열을 전달하면 매핑 함수가 T 타입의 값을 가지고 U 타입의 값으로 변환한다.
+function map2(array, f) {
+    const result = [];
+    for (let i = 0; i < array.length; i++) {
+        result[i] = f(array[i]);
+    }
+    return result;
+}
+console.log(map2(["a", "b", "c"], _ => _ !== "a"));
 //# sourceMappingURL=index.js.map
