@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "lib": ["es2015", "DOM"],
+    "module": "CommonJS",
+    "outDir": "dist",
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2015",
+    "allowJs": true,
+    "experimentalDecorators": true
+  },
+  "include": [
+    "src",
+  ]
+}
