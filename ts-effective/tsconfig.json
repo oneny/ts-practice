@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "typeRoots": ["./node_modules/@types"],
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "lib": ["esnext", "dom"]
+  },
+  "exclude": ["node_modules"],
+  "target": "esnext"
+}
