@@ -17,3 +17,5 @@ function add(a: any, b: any): any {
 
 const three = add(1, 2) // Type is number
 const twelve = add("1", "2") // Type is string
+
+export default {}

@@ -15,3 +15,5 @@ function getElement(elOrId: string | HTMLElement | null): HTMLElement {
 //  ~~~~~~~~~  'HTMLElement | null' 형식은 "HTMLElement" 형식에 할당할 수 없습니다.
   }
 }
+
+export default {}

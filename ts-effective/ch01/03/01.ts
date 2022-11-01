@@ -19,3 +19,5 @@ function calculateArea(shape: Shape) {
     return shape.width * shape.width
   }
 }
+
+export default {}

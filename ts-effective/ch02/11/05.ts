@@ -16,3 +16,5 @@ const opts = { logScale: true }
 const o: LineChartOptions = opts
    // ~ '{ logScale: boolean }' 유형에
    //   'LinearChartOptions' 공통적인 속성이 없다.
+
+export default {}

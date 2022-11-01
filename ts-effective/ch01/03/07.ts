@@ -35,3 +35,5 @@ async function setLight() {
   // API를 잘못 파악해서 lightSwitchValue가 실제로는 문자열이었다면, 런타임 시 setLightSwitch 함수까지 전달된다.
   setLightSwitch(result.lightSwitchValue)
 }
+
+export default {}

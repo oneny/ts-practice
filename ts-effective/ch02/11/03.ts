@@ -4,3 +4,5 @@ interface Options {
 }
 
 const o1: Options = document
+
+export default {}
