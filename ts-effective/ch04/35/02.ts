@@ -15,10 +15,10 @@ function calculateBoundingBox(f: Feature): BoundingBox | null {
 
   const { geometry } = f;
   if (geometry) {
-    helper(geometry.coordinates)
-                 // ~~~~~~~~~~~~
-                 // 'Geometry' 형식에 'coordinates' 속성이 없다.
-                 // 'GeometryColleciton' 형식에 'coordinates' 속성이 없다.
+    if (geometry.type === 'GeometryCollection') {
+      throw new Error("GeometryCollections are not supported");
+    }
+    helper(geometry.coordinates); // 정상
   }
 
   return box;
