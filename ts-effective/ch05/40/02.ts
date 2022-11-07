@@ -11,14 +11,15 @@ declare function shallowEqual(a: any, b: any): boolean
 function cacheLast<T extends Function>(fn: T): T {
   let lastArgs: any[] | null = null;
   let lastResult: any;
-  // '...arg: any[]) => any' 형식은 'T' 형식에 할당할 수 없다.
+  // 결과적으로 원본 함수 T 타입과 동일한 매개변수로 호출되고,
+  // 타입 단언문을 추가해서 오류를 제거하는 것은 큰 문제가 되지 않는다.
   return function (...args: any[]) {
     if (!lastArgs || !shallowEqual(lastArgs, args)) {
       lastResult = fn(...args);
       lastArgs = args;
     }
     return lastResult;
-  }
+  } as unknown as T;
 }
 
 export default {};
