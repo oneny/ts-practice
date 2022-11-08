@@ -4,8 +4,11 @@
     "typeRoots": ["./node_modules/@types"],
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "lib": ["esnext", "dom"]
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "lib": ["esnext", "dom"],
+    "sourceMap": true
   },
   "exclude": ["node_modules"],
-  "target": "esnext"
+  "target": "esnext",
 }
